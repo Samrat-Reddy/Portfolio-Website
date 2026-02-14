@@ -1,58 +1,168 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
     <head>
-        <meta charset = "UTF-8">
-        <title> My Resume </title>
+        <meta charset="UTF-8">
+        <title>My Portfolio</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
     </head>
 
-    <nav>
-        <a href="index.html"> Home </a> |
-        <a href="aboutMe.html"> About </a> |
-        <a href="contact.html"> Contact </a>
-    </nav>
-
     <body>
-        <h1> Samrat Reddy </h1>
-        <img src = "images/profile.jpg" alt = "profile picture" width = "200"/>
-        <h2> Summary </h2>
-        <p> I am a student learning Java + DSA and Web Development </p>
-        <hr>
-
-        <h2> Education </h2>
-        <ul>
-            <li> Bachelor of Technology, Computer Science and Engineering - KLH Deemed to be University (2025 - 2029) </li>
-        </ul>
-        <hr>
-
-        <h2> Skills </h2>
-        <ul>
-            <li> <h3> Java and DSA </h3>
-            <p> <ul>
-                <li> Java Fundamentals </li>
-                <li> Object Oriented Programming </li>
-                <li> Searching and Sorting Techniques </li>
-            </ul></p></li>
-
-            <li> <h3> Web Development </h3>
-            <p>
-                <ul>
-                    <li> HTML </li>
-                    <li> CSS </li>
-                    <li> JS </li>
+        <header class="border-bottom sticky-top bg-white">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-between py-3">
+                <a href="#" class="d-flex align-items-center text-decoration-none">
+                <img src="./images/profile.jpg" alt="Logo" width="40" class="me-2 rounded-circle">
+                <span class="fs-4 fw-semibold">My Portfolio</span>
+                </a>
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a href="#resume" class="nav-link">Resume</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
-            </p>
-            </li>
-        </ul>
-        <hr>
+            </div>
+        </div>
+        </header>
 
-        <h2> Awards and Certifications </h2>
-        <ul>
-            <li> HTML Essentials by CISCO - (January 2026) </li>
-        </ul>
-        <hr>
 
-        <footer>
-            <p> &copy; Samrat Reddy. All rights reserved.</p>
+        <section id="hero" class="section-light">
+            <div class="px-4 py-5 my-5 text-center"> 
+                <img class="d-block mx-auto mb-4" src="images/profile.jpg" alt="Profile Picture" width="72"> 
+                <h1 class="display-5 fw-bold text-body-emphasis">Samrat Reddy</h1> 
+                <div class="col-lg-6 mx-auto"> 
+                    <p class="lead mb-4">I am a first-year Computer Science student passionate about
+                    Java, Data Structures & Algorithms, and Web Development.
+                    I enjoy building projects and continuously improving my
+                    problem-solving skills.</p> 
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center"> 
+                        <a href="#resume" class="btn btn-primary btn-lg px-4">View Resume</a>
+                        <a href="#contact" class="btn btn-outline-secondary btn-lg px-4">Contact Me</a>
+                    </div> 
+                </div>
+        </section>
+
+        <section id="resume">
+            <div class="container py-5">
+                <h2 class="text-center mb-5">Resume</h2>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Education</h4>
+                                <ul>
+                                    <li>B.Tech in Computer Science – KLH University (2025–2029)</li>
+                                </ul>
+                                <h4 class="mt-4">Experience</h4>
+                                <ul>
+                                    <li>Currently focusing on DSA and Web Development</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Skills</h4>
+                                <ul>
+                                    <li>Java & OOP</li>
+                                    <li>Data Structures</li>
+                                    <li>Frontend Web Dev</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section-light">
+            <div class="container py-5">
+                <h2 class="text-center mb-5">Projects</h2>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Portfolio Website</h5>
+                                <p class="card-text">Built using HTML, CSS, and Bootstrap. Deployed using GitHub Pages.</p>
+                                <a href="#" class="btn btn-primary">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                            <h5 class="card-title">DSA Practice</h5>
+                            <p class="card-text">Solved problems using Java focusing on algorithms and optimization.</p>
+                            <a href="https://codolio.com/profile/KLHB_2520030131" class="btn btn-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">CyberVault</h5>
+                            <p class="card-text">A digital storage, and manager for all your passwords</p>
+                            <a href="https://github.com/Samrat-Reddy/CyberVault" class="btn btn-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container py-5">
+                <h2 class="text-center mb-5">About Me</h2>
+                <div class="row align-items-center">
+                    <div class="col-md-4 text-center">
+                    <img src="images/profile.jpg" class="img-fluid rounded-circle" width="200">
+                    </div>
+
+                    <div class="col-md-8">
+                    <p>
+                        I am a first-year Computer Science student passionate about
+                        building scalable web applications and mastering Data Structures.
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-light">
+            <div class="container py-5">
+                <h2 class="text-center mb-5">Contact Me</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>Email:</strong> samratreddy23.p@gmail.com</p>
+                        <p><strong>Phone:</strong> 9645312345</p>
+                        <p><strong>Location:</strong> Hyderabad, India</p>
+                    </div>
+                    <div class="col-md-6">
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Your Name">
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Your Email">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="border-top py-4 mt-5">
+            <div class="container text-center">
+                <p class="mb-1">© 2026 Samrat Reddy</p>
+                <p class="mb-0 text-body-secondary">
+                    Built with HTML, CSS & Bootstrap
+                </p>
+            </div>
         </footer>
+
     </body>
 </html>

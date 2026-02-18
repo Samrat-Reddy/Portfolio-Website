@@ -1,32 +1,88 @@
+/* Light section background */
 .section-light {
-  background-color: #fdf6ec;
-  border-top: 1px solid #eaeaea;
-  border-bottom: 1px solid #eaeaea;
+  background-color: #f8f9fa;
 }
 
-section {
-  padding-top: 80px;
-  padding-bottom: 80px;
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
 }
 
-#hero {
-  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
-  color: #1e293b;
-  min-height: 85vh;
-  display: flex;
-  align-items: center;
+/* Navbar styling */
+header {
+  transition: all 0.3s ease;
 }
 
-#hero .btn-outline-secondary:hover {
-  background-color: white;
-  color: #0f172a;
+.nav-link {
+  color: #333;
+  font-weight: 500;
 }
 
-#resume h4 {
-  font-weight: 600;
-  margin-bottom: 15px;
+.nav-link:hover {
+  color: #0d6efd;
 }
 
-#resume ul {
-  padding-left: 18px;
+/* Hero section */
+#hero img {
+  border-radius: 50%;
+}
+
+/* Card styling (Projects + Certifications) */
+.card {
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Certification image styling */
+#certifications img {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  object-fit: cover;
+  height: 250px;
+}
+
+/* Section headings */
+section h2 {
+  font-weight: 700;
+  position: relative;
+}
+
+section h2::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background-color: #0d6efd;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* About section image */
+#about img {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact form styling */
+form .form-control {
+  border-radius: 8px;
+}
+
+form .form-control:focus {
+  box-shadow: none;
+  border-color: #0d6efd;
+}
+
+/* Footer styling */
+footer {
+  background-color: #ffffff;
+}
+
+footer p {
+  margin: 0;
 }

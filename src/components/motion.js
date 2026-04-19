@@ -4,8 +4,8 @@ export const staggerContainer = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.14,
-      delayChildren: 0.08,
+      staggerChildren: 0.18,
+      delayChildren: 0.1,
     },
   },
 };
@@ -13,14 +13,18 @@ export const staggerContainer = {
 export const fadeInUp = {
   hidden: {
     opacity: 0,
-    y: 40,
+    y: 36,
+    scale: 0.96,
   },
   visible: {
     opacity: 1,
     y: 0,
+    scale: 1,
     transition: {
       duration: 0.62,
-      ease: easing,
+      type: "spring",
+      stiffness: 140,
+      damping: 18,
     },
   },
 };

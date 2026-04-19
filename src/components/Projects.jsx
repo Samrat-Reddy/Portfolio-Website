@@ -1,91 +1,79 @@
-import { useEffect, useRef } from "react";
+import ProjectCard from "./ProjectCard";
+import SectionWrapper from "./SectionWrapper";
 
 const projects = [
   {
-    title: "ReturnSpark — E-commerce Website",
+    title: "ReturnSpark",
+    category: "E-commerce Platform",
     status: "Awaiting Deployment",
     statusType: "pending",
-    desc: "Designed and developed a full e-commerce platform for a return gifts business. Focused on product presentation, smooth navigation, and a responsive shopping experience. Built to support real customer browsing and purchase flow, aligning with the brand’s gifting use case.",
-    tags: ["React", "Tailwind", "E-commerce", "UI/UX", "Client Work"],
+    desc: "A client e-commerce build for a gifting business, structured to make browsing, product discovery, and purchase flow feel straightforward on both mobile and desktop.",
+    tags: ["React", "Tailwind", "Client Work", "E-commerce", "Responsive UI"],
+    meta: "Client platform / product presentation and conversion flow",
     link: null,
+    featured: true,
+    thumbnail:
+      "radial-gradient(circle at top left, rgba(240,165,0,0.32), transparent 32%), linear-gradient(135deg, #151515 0%, #1c1c1c 42%, #0d0d0d 100%)",
   },
   {
-    title: "RS Calligraphy Studio — Workshop Platform",
+    title: "RS Calligraphy Studio",
+    category: "Workshop Platform",
     status: "Near Completion",
     statusType: "progress",
-    desc: "Developed a website for a calligraphy instructor to promote workshops and manage course registrations. Focused on clear information flow, user engagement, and seamless sign-up experience for potential students.",
-    tags: ["React", "Responsive Design", "UI/UX", "Client Work"],
+    desc: "A workshop and registration platform designed to help an instructor present sessions clearly, guide visitors through offerings, and turn interest into sign-ups without friction.",
+    tags: ["React", "Client Work", "Workshops", "UX Flow", "Responsive Design"],
+    meta: "Client site / workshop discovery and registration experience",
     link: null,
+    featured: false,
+    thumbnail:
+      "radial-gradient(circle at top right, rgba(240,165,0,0.24), transparent 28%), linear-gradient(135deg, #101010 0%, #181414 55%, #0d0d0d 100%)",
   },
   {
-    title: "ALRMS — System Control UI",
+    title: "ALRMS",
+    category: "Frontend System UI",
     status: "In Progress",
     statusType: "progress",
-    desc: "Frontend interface for a resource management system. Designed for operational clarity — dense data, clean hierarchy, real-time state management. Built with a focus on usability under load.",
-    tags: ["React", "State Management", "Data UI", "Systems"],
+    desc: "A frontend interface for a resource management system, built around dense operational data, strong hierarchy, and interaction patterns that stay usable under heavier workflows.",
+    tags: ["React", "Systems UI", "State Management", "Operational Data"],
+    meta: "Systems interface / clarity under data-heavy usage",
     link: "https://github.com/Samrat-Reddy/ALRMS",
+    featured: false,
+    thumbnail:
+      "radial-gradient(circle at bottom left, rgba(56,189,248,0.18), transparent 30%), linear-gradient(135deg, #0f1217 0%, #13171d 52%, #0b0e12 100%)",
   },
   {
-    title: "CyberVault — Password Manager",
+    title: "CyberVault",
+    category: "Password Manager",
     status: "Shipped",
     statusType: "complete",
-    desc: "A desktop password manager built in Java with local encrypted storage. Focused on security fundamentals — hashing, symmetric encryption, and zero-trust local design. No cloud dependency.",
-    tags: ["Java", "Encryption", "Security", "Desktop App"],
+    desc: "A Java desktop password manager focused on local-first security, encrypted storage, and a simple trust model with no cloud dependency and no unnecessary complexity.",
+    tags: ["Java", "Security", "Encryption", "Desktop App"],
+    meta: "Security tool / local encrypted credential storage",
     link: "https://github.com/Samrat-Reddy/CyberVault",
+    featured: false,
+    thumbnail:
+      "radial-gradient(circle at center, rgba(52,211,153,0.16), transparent 32%), linear-gradient(135deg, #0d1210 0%, #141817 56%, #0a0d0c 100%)",
   },
 ];
 
-const badgeStyles = {
-  pending: "bg-white/5 text-[#6b6760] border border-[#1f1f1f]",
-  progress: "bg-[rgba(240,165,0,0.12)] text-[#f0a500] border border-[rgba(240,165,0,0.25)]",
-  complete: "bg-[rgba(52,211,153,0.1)] text-[#34d399] border border-[rgba(52,211,153,0.2)]",
-};
-
-function ProjectCard({ project }) {
-  return (
-    <div className="bg-[#0a0a0a] hover:bg-[#111111] transition-colors p-8 flex flex-col">
-      <div className="flex justify-between items-start mb-3">
-        <h3 className="text-[1.2rem] font-bold tracking-[-0.01em] leading-tight">{project.title}</h3>
-        <span className={`font-mono text-[9.5px] tracking-[0.12em] uppercase px-2.5 py-1 whitespace-nowrap ml-4 mt-1 flex-shrink-0 ${badgeStyles[project.statusType]}`}>
-          {project.status}
-        </span>
-      </div>
-      <p className="text-sm text-[#6b6760] leading-[1.65] mb-6 flex-grow">{project.desc}</p>
-      <div className="flex items-center justify-between flex-wrap gap-4">
-        <div className="flex gap-2 flex-wrap">
-          {project.tags.map(tag => (
-            <span key={tag} className="font-mono text-[10px] tracking-[0.06em] text-[#6b6760] border border-[#1f1f1f] px-2 py-0.5">
-              {tag}
-            </span>
-          ))}
-        </div>
-        {project.link && (
-          <a href={project.link} className="font-mono text-[10px] tracking-[0.1em] uppercase text-[#f0a500] no-underline border-b border-transparent hover:border-[#f0a500] transition-colors">
-            GitHub ↗
-          </a>
-        )}
-      </div>
-    </div>
-  );
-}
-
 export default function Projects() {
-  const ref = useRef(null);
-  useEffect(() => {
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) e.target.classList.add("opacity-100", "translate-y-0"); }, { threshold: 0.1 });
-    if (ref.current) obs.observe(ref.current);
-    return () => obs.disconnect();
-  }, []);
-
   return (
-    <section id="projects" ref={ref} className="px-10 py-28 max-w-[1100px] mx-auto opacity-0 translate-y-5 transition-all duration-500">
-      <div className="flex items-baseline justify-between border-b border-[#1f1f1f] pb-5 mb-14">
-        <h2 className="text-[clamp(1.6rem,3.5vw,2.2rem)] font-bold tracking-[-0.02em]">Work &amp; Projects</h2>
-        <span className="font-mono text-[11px] text-[#6b6760] tracking-[0.1em]">01 / 04</span>
+    <SectionWrapper
+      id="projects"
+      title="Selected Work"
+      index="01 / 04"
+      contentClassName="space-y-8"
+    >
+      <div className="max-w-[720px]">
+        <p className="text-sm leading-[1.8] text-[#8b857b] sm:text-[0.98rem]">
+          Real work across client delivery, systems UI, and product builds. The emphasis is practical: clear interfaces, reliable flows, and software that is useful beyond a demo.
+        </p>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-[1.5px] bg-[#1f1f1f]">
-        {projects.map(p => <ProjectCard key={p.title} project={p} />)}
+      <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+        {projects.map((project) => (
+          <ProjectCard key={project.title} project={project} />
+        ))}
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import Team from "./components/Team";
@@ -7,16 +6,18 @@ import Contact from "./components/Contact";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Ticker from "./components/Ticker";
+import ExperienceStrip from "./components/ExperienceStrip";
 
 export default function App() {
   return (
-    <div className="bg-[#0a0a0a] text-[#e8e4dc] font-display overflow-x-hidden">
+    <div className="overflow-x-hidden bg-[#0a0a0a] font-display text-[#e8e4dc]">
       <Nav />
       <Hero />
       <Ticker />
+      <ExperienceStrip />
       <Projects />
-      <Team />
       <Focus />
+      <Team />
       <Contact />
       <Footer />
     </div>

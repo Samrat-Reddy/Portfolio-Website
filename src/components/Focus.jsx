@@ -1,4 +1,5 @@
 import SectionWrapper from "./SectionWrapper";
+import { fadeInRight } from "./motion";
 
 export default function Focus() {
   return (
@@ -7,6 +8,8 @@ export default function Focus() {
       title="Current Focus"
       index="02 / 04"
       contentClassName="flex flex-col items-center text-center"
+      reveal
+      revealVariant={fadeInRight}
     >
       <div className="max-w-[760px] space-y-6">
         <p className="text-[clamp(1.5rem,3.2vw,2.35rem)] font-semibold leading-[1.35] tracking-[-0.03em]">

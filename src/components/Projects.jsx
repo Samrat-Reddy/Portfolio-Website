@@ -3,6 +3,7 @@ import SectionWrapper from "./SectionWrapper";
 import returnSparkImage from "../Images/Return-Spark.png";
 import rsCalligraphyStudioImage from "../Images/RS_Calligraphy_Studio.png";
 import alrmsImage from "../Images/ALRMS.png";
+import { fadeInLeft } from "./motion";
 
 const projects = [
   {
@@ -69,6 +70,8 @@ export default function Projects() {
       title="Selected Work"
       index="01 / 04"
       contentClassName="space-y-8"
+      reveal
+      revealVariant={fadeInLeft}
     >
       <div className="max-w-[720px]">
         <p className="text-sm leading-[1.8] text-[#8b857b] sm:text-[0.98rem]">

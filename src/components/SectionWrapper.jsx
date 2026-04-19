@@ -1,4 +1,5 @@
-import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { fadeInLeft } from "./motion";
 
 export default function SectionWrapper({
   id,
@@ -7,31 +8,24 @@ export default function SectionWrapper({
   children,
   className = "",
   contentClassName = "",
+  reveal = false,
+  revealVariant = fadeInLeft,
 }) {
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("opacity-100", "translate-y-0");
-        }
-      },
-      { threshold: 0.12 },
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  const Component = reveal ? motion.section : "section";
+  const motionProps = reveal
+    ? {
+        variants: revealVariant,
+        initial: "hidden",
+        whileInView: "visible",
+        viewport: { once: true, amount: 0.22 },
+      }
+    : {};
 
   return (
-    <section
+    <Component
       id={id}
-      ref={ref}
-      className={`mx-auto max-w-[1100px] px-6 py-24 opacity-0 translate-y-5 transition-all duration-500 sm:px-10 ${className}`}
+      className={`mx-auto max-w-[1100px] px-6 py-24 sm:px-10 ${className}`}
+      {...motionProps}
     >
       {(title || index) && (
         <div className="mb-12 flex items-baseline justify-between gap-6 border-b border-[#1f1f1f] pb-5">
@@ -50,6 +44,6 @@ export default function SectionWrapper({
         </div>
       )}
       <div className={contentClassName}>{children}</div>
-    </section>
+    </Component>
   );
 }

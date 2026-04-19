@@ -1,4 +1,5 @@
 import SectionWrapper from "./SectionWrapper";
+import { fadeInLeft } from "./motion";
 
 export default function Team() {
   return (
@@ -7,6 +8,8 @@ export default function Team() {
       title="CraftYourSystems"
       index="03 / 04"
       contentClassName="grid grid-cols-1 items-start gap-16 lg:grid-cols-2"
+      reveal
+      revealVariant={fadeInLeft}
     >
       <div>
         <h3 className="mb-5 text-[clamp(2rem,5vw,3.5rem)] font-extrabold leading-[1] tracking-[-0.03em]">

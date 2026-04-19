@@ -1,5 +1,8 @@
 import ProjectCard from "./ProjectCard";
 import SectionWrapper from "./SectionWrapper";
+import returnSparkImage from "../Images/Return-Spark.png";
+import rsCalligraphyStudioImage from "../Images/RS_Calligraphy_Studio.png";
+import alrmsImage from "../Images/ALRMS.png";
 
 const projects = [
   {
@@ -12,6 +15,7 @@ const projects = [
     meta: "Client platform / product presentation and conversion flow",
     link: null,
     featured: true,
+    image: returnSparkImage,
     thumbnail:
       "radial-gradient(circle at top left, rgba(240,165,0,0.32), transparent 32%), linear-gradient(135deg, #151515 0%, #1c1c1c 42%, #0d0d0d 100%)",
   },
@@ -25,26 +29,28 @@ const projects = [
     meta: "Client site / workshop discovery and registration experience",
     link: null,
     featured: false,
+    image: rsCalligraphyStudioImage,
     thumbnail:
       "radial-gradient(circle at top right, rgba(240,165,0,0.24), transparent 28%), linear-gradient(135deg, #101010 0%, #181414 55%, #0d0d0d 100%)",
   },
   {
     title: "ALRMS",
     category: "Frontend System UI",
-    status: "In Progress",
-    statusType: "progress",
+    status: "Academic Project",
+    statusType: "complete",
     desc: "A frontend interface for a resource management system, built around dense operational data, strong hierarchy, and interaction patterns that stay usable under heavier workflows.",
-    tags: ["React", "Systems UI", "State Management", "Operational Data"],
+    tags: ["HTML", "Systems UI", "Bootstrap", "Operational Data"],
     meta: "Systems interface / clarity under data-heavy usage",
     link: "https://github.com/Samrat-Reddy/ALRMS",
     featured: false,
+    image: alrmsImage,
     thumbnail:
       "radial-gradient(circle at bottom left, rgba(56,189,248,0.18), transparent 30%), linear-gradient(135deg, #0f1217 0%, #13171d 52%, #0b0e12 100%)",
   },
   {
     title: "CyberVault",
     category: "Password Manager",
-    status: "Shipped",
+    status: "Academic Project",
     statusType: "complete",
     desc: "A Java desktop password manager focused on local-first security, encrypted storage, and a simple trust model with no cloud dependency and no unnecessary complexity.",
     tags: ["Java", "Security", "Encryption", "Desktop App"],

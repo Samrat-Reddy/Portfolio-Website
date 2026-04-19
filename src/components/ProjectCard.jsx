@@ -16,12 +16,21 @@ export default function ProjectCard({ project }) {
           project.featured ? "min-h-[260px] sm:min-h-[320px]" : "min-h-[210px]"
         }`}
       >
-        <div
-          className="absolute inset-0"
-          style={{
-            background: project.thumbnail,
-          }}
-        />
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={`${project.title} preview`}
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            loading="lazy"
+          />
+        ) : (
+          <div
+            className="absolute inset-0"
+            style={{
+              background: project.thumbnail,
+            }}
+          />
+        )}
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.12),rgba(10,10,10,0.82))]" />
         <div className="absolute inset-x-0 top-0 flex items-center justify-between gap-3 p-5">
           {project.featured ? (
